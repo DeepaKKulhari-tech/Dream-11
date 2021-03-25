@@ -23,9 +23,11 @@ public static AndroidDriver<AndroidElement> capabilities() throws MalformedURLEx
 	File app=new File(f, "Dream11.apk");
 	
 	DesiredCapabilities capabilities = new DesiredCapabilities();
-	capabilities.setCapability(MobileCapabilityType.DEVICE_NAME,"DKPixel");
+	//capabilities.setCapability(MobileCapabilityType.DEVICE_NAME,"DKPixel");
+	capabilities.setCapability(MobileCapabilityType.DEVICE_NAME,"real");
 	capabilities.setCapability(MobileCapabilityType.APP,app.getAbsolutePath());
 	capabilities.setCapability(MobileCapabilityType.PLATFORM_VERSION,"10");
+	capabilities.setCapability(MobileCapabilityType.AUTOMATION_NAME,"UIAutomator");
 	
 	 driver =new AndroidDriver<AndroidElement>(new URL("http://127.0.0.1:4723/wd/hub"),capabilities);
 	return driver;
